@@ -13,18 +13,25 @@ print(str(response))
 print(response.status_code)
 
 # .json(): 응답 body를 파이썬 딕셔너리로 변환
+# 응답한 body 기본적으로는 텍스트
 post = response.json()
+print(post)
 print(post["title"])
 
 # 목록 조회 — params로 쿼리스트링 전달 (?userId=1)
 response = requests.get(f"{BASE_URL}/posts", params={"userId": 1})
 posts = response.json()
+print('--------------------------------')
+print(posts)
+print('--------------------------------')
 print(f"게시글 수: {len(posts)}")
+print('--------------------------------')
 
 
 # ======================================================
 # POST — 데이터 생성
 # ======================================================
+print('--------------------------------')
 
 new_post = {"title": "테스트 제목", "body": "내용입니다", "userId": 1}
 
@@ -32,35 +39,10 @@ new_post = {"title": "테스트 제목", "body": "내용입니다", "userId": 1}
 response = requests.post(f"{BASE_URL}/posts", json=new_post)
 
 # 201: 생성 성공을 나타내는 HTTP 상태코드
-print(response.status_code)
+
+print('생성 : ',response.status_code)
 print(response.json())
-
-
-# ======================================================
-# PUT — 데이터 전체 수정
-# ======================================================
-
-updated_post = {"id": 1, "title": "수정된 제목", "body": "수정된 내용", "userId": 1}
-response = requests.put(f"{BASE_URL}/posts/1", json=updated_post)
-print(response.json()["title"])
-
-
-# ======================================================
-# PATCH — 데이터 일부 수정
-# ======================================================
-
-# PUT과 달리 변경할 필드만 전달
-response = requests.patch(f"{BASE_URL}/posts/1", json={"title": "부분 수정 제목"})
-print(response.json()["title"])
-
-
-# ======================================================
-# DELETE — 데이터 삭제
-# ======================================================
-
-response = requests.delete(f"{BASE_URL}/posts/1")
-# 200 또는 204: 삭제 성공
-print(response.status_code)
+print('--------------------------------')
 
 
 # ======================================================
