@@ -19,3 +19,31 @@ print(status)
 
 # -- 반복문 --
 # for, while
+i = 1
+result = ''
+while i <= 10:
+    result += f'{i} ' # 자바스크립트처럼 문자열 + 숫자 이런 형태 연산 지원하지 않음
+    i += 1; 
+print(result)
+
+# ── for 반복문 ───────────────────────────────────────────────
+# range(n)      → 0 이상 n 미만의 정수 시퀀스
+# range(a, b)   → a 이상 b 미만
+# range(a, b, step) → step 간격으로 증가
+
+for i in range(5):          # 0, 1, 2, 3, 4
+    print(i, end=" ")       # end=" " → 줄바꿈 대신 공백으로 구분
+print()                     # 줄바꿈
+
+for i in range(1, 6):       # 1, 2, 3, 4, 5
+    print(i, end=" ")
+print()
+
+for i in range(0, 10, 2):   # 0, 2, 4, 6, 8 (2씩 증가)
+    print(i, end=" ")
+print()
+
+# 리스트 요소를 직접 순회합니다. JavaScript의 for...of 와 같습니다.
+fruits = ["사과", "바나나", "딸기"]
+for fruit in fruits:
+    print(fruit)
