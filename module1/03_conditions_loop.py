@@ -47,3 +47,15 @@ print()
 fruits = ["사과", "바나나", "딸기"]
 for fruit in fruits:
     print(fruit)
+
+# ── break / continue ─────────────────────────────────────────
+# continue : 현재 반복을 건너뛰고 다음 반복으로 이동
+# break    : 반복문 전체를 즉시 종료
+
+for i in range(10):
+    if i == 3:
+        continue    # 3은 출력 건너뜀
+    if i == 7:
+        break       # 7에서 반복 종료
+    print(i, end=" ")
+print()
