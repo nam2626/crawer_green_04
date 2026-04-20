@@ -13,7 +13,10 @@ products = [
 
 # 문제 1. 재고가 있는(stock > 0) 상품 이름만 list로 만드세요.
 # 기대 출력: ['노트북', '키보드']
-in_stock = []   # 이 줄을 list comprehension으로 바꾸세요
+in_stock = [product["name"] for product in products if product["stock"] > 0]
+# for product in products:
+#     if product['stock'] > 0:
+#         in_stock.append(product["name"])
 print(in_stock)
 
 
@@ -24,9 +27,32 @@ print(in_stock)
 # 키보드: 89,000원 (재고: 3개)
 # 모니터: 450,000원 (재고: 0개)
 for p in products:
-    pass    # 이 줄을 f-string 출력으로 바꾸세요
+    print(f"{p['name']}: {p['price']:,}원 (재고: {p['stock']}개)")
 
 
 # 문제 3. (도전) 재고가 있는 상품의 총 금액을 계산하세요.
 # 힌트: price * stock 의 합계
 # 기대 출력: 재고 총액: 6,267,000원
+total = sum(p["price"] * p["stock"] for p in products if p["stock"] > 0)
+print(f"재고 총액: {total:,}원")
+
+
+# ======================================================
+# f-string 자주 쓰는 포맷 정리
+# ======================================================
+# n = 1234567.891, s = "hello"
+#
+# {n:,}        → 1,234,567.891   천 단위 쉼표
+# {n:.2f}      → 1234567.89      소수점 2자리
+# {n:,.2f}     → 1,234,567.89    쉼표 + 소수점 2자리
+# {n:>10}      → '  1234567.891' 오른쪽 정렬 (폭 10)
+# {n:<10}      → '1234567.891  ' 왼쪽 정렬 (폭 10)
+# {n:^10}      → ' 1234567.891 ' 가운데 정렬 (폭 10)
+# {n:010}      → 01234567.891   0으로 채우기
+# {n:+}        → +1234567.891   양수 부호 표시
+# {n:e}        → 1.234568e+06   지수 표기
+# {n:%}        → 123456789.100% 퍼센트 (×100)
+# {s!r}        → 'hello'        repr() 적용 (따옴표 포함)
+# {s!u}        → HELLO          대문자 (Python 3.12+)
+# {s:>10}      → '     hello'   문자열 오른쪽 정렬
+# {s:*^10}     → '**hello***'   * 로 채우며 가운데 정렬
