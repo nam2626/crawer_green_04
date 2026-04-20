@@ -20,3 +20,17 @@ print(get_min_max([1,2,3,4,5]))
 print(get_min_max([1,2,3,4,5])[0],get_min_max([1,2,3,4,5])[1])
 low, high = get_min_max([1,2,3,4,5])
 print(low, high)
+
+# 람다(lamda)
+# 자바스크립트에서는 화살표함수
+n = lambda x: x * 2 # const f = (x) => x * 2
+print(n(3))
+
+students = [
+    {'name':'홍길동', 'score' : 90},
+    {'name':'김철수', 'score' : 87},
+    {'name':'박영희', 'score' : 77},
+]
+
+sorted_students = sorted(students, key=lambda s:s['score'], reverse=False)
+print(sorted_students)
