@@ -30,3 +30,8 @@ print(url.replace('https','http')) # https -> http로 변환
 # in을 이용해서 특정 문자열 포함 여부를 확인 가능
 print('example' in url)
 print('example1' in url)
+
+# 특정 문자열로 시작하는지 확인
+print(url.startswith('https'))
+# 특정 문자열로 끝나는지 확인
+print(url.endswith('1'))
