@@ -16,3 +16,19 @@ numbers = [1,2,3,4,5,6,7,8,9,10]
 print(numbers[0],numbers[3])
 # 리스트 마지막에 있는 값 출력
 print(numbers[-1],numbers[-7])
+
+print(numbers[0:5]) # 0 이상 5 미만 인덱스 범위의 요소 출력
+print(numbers[5:]) # 5 이상 인덱스 범위의 요소 출력
+print(numbers[:5]) # 0 이상 5 미만 인덱스 범위의 요소 출력
+print(numbers[-1:]) # 마지막 요소 출력
+print(numbers[-3:]) # 마지막 3개 요소 출력
+print(numbers[::2]) # 0부터 끝까지 2씩 증가하는 인덱스의 요소 출력
+
+# 특정 값이 리스트에 있는지 확인
+print(5 in numbers) # True
+print(11 in numbers) # False
+
+
+
+
+
