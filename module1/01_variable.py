@@ -12,3 +12,10 @@ print(type(is_student))
 print(type(score))
 
 # -- 문자열 기본적인 조작 --
+# 문자열 메서드는 원본을 바꾸지 않고 새 문자열로 반환
+greetring = '   안녕하세요 Hello   '
+print(greetring.strip()) # 앞뒤 공백 제거
+print(greetring.strip().upper()) # 알파벳 대문자 변환
+print(greetring.strip().lower()) # 알파벳 소문자 변환
+print(len(greetring)) # 문자열 길이(공백 포함)
+print(len(greetring.strip()))
