@@ -17,3 +17,6 @@ def get_min_max(numbers):
     return min(numbers), max(numbers)
 
 print(get_min_max([1,2,3,4,5]))
+print(get_min_max([1,2,3,4,5])[0],get_min_max([1,2,3,4,5])[1])
+low, high = get_min_max([1,2,3,4,5])
+print(low, high)
