@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python module2/04_bs4_requests.py)"
+    ]
+  }
+}
