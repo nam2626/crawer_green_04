@@ -56,7 +56,7 @@ def update_item(item_id: int, item: Item):
         raise HTTPException(status_code=404, detail="아이템을 찾을 수 없습니다")
     fake_db[item_id] = item.model_dump()
     return {"message": "수정 완료", "item_id": item_id, "item": item}
-
+ 
 # --- DELETE: 아이템 삭제 ---
 @app.delete("/items/{item_id}")
 def delete_item(item_id: int):
