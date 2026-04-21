@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python module2/04_bs4_requests.py)"
+      "Bash(python module2/04_bs4_requests.py)",
+      "Bash(.venv/Scripts/pip list *)",
+      "Bash(.venv/Scripts/python module3/04_books_crawler.py)"
     ]
   }
 }
