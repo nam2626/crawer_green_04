@@ -57,8 +57,11 @@ def init_db():
 def create_post(title: str, url: str, views: int = 0, category: str = None) -> Post:
     """게시글 1건을 저장하고 반환합니다."""
     with Session(engine) as session:
+        # 저장할 객체 생성
         post = Post(title=title, url=url, views=views, category=category)
+        # 테이블에 추가
         session.add(post)
+        # DB에 반영 (INSERT 실행)
         session.commit()
         session.refresh(post)   # DB에서 auto-increment ID 등을 다시 읽어옵니다.
         print(f"[CREATE] {post}")
