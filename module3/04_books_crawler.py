@@ -131,7 +131,9 @@ def save_books(books: list[dict]) -> int:
     """중복 URL을 스킵하고 새 책만 저장합니다. 저장 건수를 반환합니다."""
     saved = 0
     with Session(engine) as session:
+        # 기존 URL을 모두 조회해서 집합으로 만듭니다.
         existing_urls = {row[0] for row in session.query(Book.url).all()}
+        # 새로운 책 중에서 URL이 중복되지 않는 것만 필터링해서 저장합니다.
         new_books = [Book(**b) for b in books if b["url"] not in existing_urls]
         session.add_all(new_books)
         session.commit()
